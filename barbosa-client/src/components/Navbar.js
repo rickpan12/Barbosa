@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <Wrapper>
       <nav className="nav-bar">
-        <Link to="/homepage" className="text brand">
+        <Link to="/" className="text brand">
           Barbosa
         </Link>
         <div className="locations">
@@ -23,7 +23,7 @@ const Navbar = () => {
             Contact
           </Link>
 
-          <Link className="book-room text">Book Room</Link>
+          <Link to ='/book-room' className="book-room text">Book Room</Link>
         </div>
 
         {/* <div className="book-room text">
