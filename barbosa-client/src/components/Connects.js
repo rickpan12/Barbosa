@@ -1,15 +1,16 @@
 import React from 'react'
 import { FaInstagram, FaFacebookF,FaTwitter } from 'react-icons/fa'
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
 
 const Connects = () => {
     return (
         <Wrapper>
             <div className='connects text'>
                 <div className='socials'>
-                    <div id='logo'>
-                        <button>Barbosa</button>
-                    </div>
+
+                        <Link to='/homepage' className='text brand'>Barbosa</Link>
+
                     <div id='social-buttons'>
                         <button><FaInstagram /></button>
                         <button><FaFacebookF /></button>
