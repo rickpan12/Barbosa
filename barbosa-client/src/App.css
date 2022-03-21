@@ -28,3 +28,9 @@ button {
   color: white;
   height: 100%;
 }
+
+.brand {
+  font-weight: 500;
+  font-size: 3vw;
+  text-decoration: none;
+}

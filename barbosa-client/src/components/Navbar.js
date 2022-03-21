@@ -33,12 +33,6 @@ const Wrapper = styled.div`
     margin-top: 4%;
     margin-bottom: 6%;
 
-    .brand {
-      font-weight: 500;
-      font-size: 3vw;
-      text-decoration: none;
-    }
-
     .locations {
       display: flex;
       align-items: center;
