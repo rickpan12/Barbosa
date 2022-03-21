@@ -3,7 +3,6 @@ import "./App.css";
 import HomePage from "./pages/HomePage";
 import Photos from "./pages/Photos";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Home } from "@material-ui/icons";
 
 function App() {
   return (
@@ -14,10 +13,14 @@ function App() {
             <Route path="/homepage">
               <HomePage />
             </Route>
+            <Route path="/photos">
+              <Photos/>
+            </Route>
           </Switch>
         </div>
       </div>
     </Router>
+
   );
 }
 
