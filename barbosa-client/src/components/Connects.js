@@ -20,10 +20,10 @@ const Connects = () => {
                 </div>
 
                 <div className='links'>
-                    <p>About</p>
-                    <p>Photos</p>
-                    <p>Book a Room</p>
-                    <p>Ameneties</p>
+                    <Link className='link' to='/about'>About</Link>
+                    <Link className='link' to='/photos'>Photos</Link>
+                    <Link className='link' to= 'book-room'>Book a room</Link>
+                    <Link className='link' to='/ameneties'>Ameneties</Link>
                 </div>
 
             </div>
@@ -85,15 +85,25 @@ const Wrapper = styled.div`
         }
 
         .links {
+            display: flex;
+            flex-flow: column;
             width: 30%;
-            color: #97918F;
+            
             text-decoration: underline;
             padding-top: 1vw;
             font-size: 1.3vw;
             align-self: center;
 
-            p:hover{
+            .link {
+                color: #97918F;
+                margin-bottom: 0.8rem;
+            }
+
+            Link:hover{
                 cursor: pointer;
+            }
+            *:focus{
+            color: #97918F;
             }
 
         }
