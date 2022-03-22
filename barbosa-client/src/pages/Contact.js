@@ -1,9 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Connects from "../components/Connects";
 import styled from "styled-components";
+import ErrorAlert from "../components/ErrorAlert";
 
 const Contact = () => {
+  const initialState = {
+    name: "",
+    email: "",
+    message: "",
+    showAlert: false,
+  };
+
+  const [state, setState] = useState(initialState);
+
+  const handleChange = (e) => {
+    console.log(state)
+    const value = e.target.name;
+    setState({
+      ...state,
+      [value]: e.target.value,
+    });
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault()
+    const {name, email, message} = state
+
+    if(name ==='' || email === ''|| message ==='') {
+      setState({...state, showAlert: true})
+    }
+    else {
+      setState({...state, showAlert: false})
+    }
+    
+    console.log(state)
+    return
+  }
+
   return (
     <Wrapper>
       <Navbar />
@@ -30,15 +64,30 @@ const Contact = () => {
         </div>
 
         <div className="form">
+          {state.showAlert && <ErrorAlert />}
           <form>
-            <input placeholder="Name" className="form-text" type="text"></input>
             <input
+              value={state.name}
+              onChange={handleChange}
+              name="name"
+              placeholder="Name"
+              className="form-text"
+              type="text"
+            ></input>
+            <input
+              onChange={handleChange}
+              name="email"
               placeholder="Email"
               className="form-text"
               type="email"
             ></input>
-            <textarea placeholder="Message" className="form-box"></textarea>
-            <button className="form-submit" type="submit">
+            <textarea
+              onChange={handleChange}
+              name="message"
+              placeholder="Message"
+              className="form-box"
+            ></textarea>
+            <button className="form-submit"  onClick={onSubmit}>
               Send Message
             </button>
           </form>
